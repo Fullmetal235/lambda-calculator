@@ -1,15 +1,17 @@
 import React from "react";
 
-const NumberButton = ({number}) => {
+export const NumberButton =  props => {
   return (
-    <>
+    <div>
       {/* Display a button element rendering the data being passed down from the parent container on props */}
 
-      <button >
-           {number}
-       </button> 
-
-    </>
+      <button
+        onClick={() => {
+          props.props.clickHandler(props.digit);
+        }}
+      >
+        {props.digit}
+      </button>
+    </div>
   );
 };
-export default NumberButton;
